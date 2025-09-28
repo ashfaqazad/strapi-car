@@ -1,16 +1,32 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Cars from "./components/Cars";
-// import Home from "./components/Home"; // Add this
+import Cars from "./pages/Cars";
+import Navbar from "./components/Navbar";
+// import CarList from "./components/CarList";
+import Home from "./pages/Home"; // Add this
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
 
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/cars" element={<Cars />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+    <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cars" element={<Cars />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+
+
+          
+          {/* <Route path="/carlist" element={<CarList />} /> */}
+
+        </Routes>
+        <Footer />
+      </Router>
+    </>
   );
 }
 
